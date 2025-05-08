@@ -11,9 +11,9 @@ echo "============================="
 read -p "Choose an option [1-4]: " choice
 
 case "$choice" in
-  1) /usr/bin/enable.sh ;;
-  2) /usr/bin/disable.sh ;;
-  3) /usr/bin/toggle.sh ;;
+  1) /usr/bin/rasptor_enable.sh ;;
+  2) /usr/bin/rasptor_disable.sh ;;
+  3) /usr/bin/rasptor_toggle.sh ;;
   4) echo "Exiting." ;;
   *) echo "Invalid option. Exiting." ;;
 esac
