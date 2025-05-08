@@ -20,8 +20,10 @@
 
 Or download and install from Cloudsmith:
 
+``` sh
 wget https://dl.cloudsmith.io/public/l4ser-security-labs/rasptor/deb/any-distro/pool/any-version/main/r/ra/rasptor_1.0/rasptor1.0_all.deb
-```sudo dpkg -i rasptor_1.0_all.deb```
+sudo dpkg -i rasptor_1.0_all.deb
+```
 
 Make sure you have tor and iptables installed:
 ``` sh
