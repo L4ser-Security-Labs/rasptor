@@ -1,5 +1,30 @@
 #!/bin/bash
 
+LOG_FILE="/var/log/rasptor.log"
+
+# Ensure log file exists
+sudo touch "$LOG_FILE"
+sudo chmod 644 "$LOG_FILE"
+
+# Function to log messages
+log() {
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | sudo tee -a "$LOG_FILE" > /dev/null
+}
+
+# Start timestamp
+START_TIME=$(date +%s)
+START_HR=$(date '+%Y-%m-%d %H:%M:%S')
+
+# Check if running as root
+if [[ $EUID -ne 0 ]]; then
+  log "FAILED: Attempted to run Rasptor without root privileges."
+  echo "[!] Error: Rasptor must be run as root."
+  echo "    Try: sudo rasptor"
+  exit 1
+fi
+
+log "Rasptor started by user: $USER at $START_HR"
+
 echo "============================="
 echo "       Rasptor Control       "
 echo "============================="
@@ -11,9 +36,35 @@ echo "============================="
 read -p "Choose an option [1-4]: " choice
 
 case "$choice" in
-  1) /usr/bin/rasptor_enable.sh ;;
-  2) /usr/bin/rasptor_disable.sh ;;
-  3) /usr/bin/rasptor_toggle.sh ;;
-  4) echo "Exiting." ;;
-  *) echo "Invalid option. Exiting." ;;
+  1)
+    log "Option selected: Enable Tor routing"
+    /usr/bin/rasptor_enable.sh
+    ;;
+  2)
+    log "Option selected: Disable Tor routing"
+    /usr/bin/rasptor_disable.sh
+    ;;
+  3)
+    log "Option selected: Toggle Tor routing"
+    /usr/bin/rasptor_toggle.sh
+    ;;
+  4)
+    log "User exited Rasptor menu"
+    echo "Exiting."
+    ;;
+  *)
+    log "Invalid option selected: $choice"
+    echo "Invalid option. Exiting."
+    ;;
 esac
+
+# End timestamp and session duration
+END_TIME=$(date +%s)
+END_HR=$(date '+%Y-%m-%d %H:%M:%S')
+DURATION=$((END_TIME - START_TIME))
+
+# Convert to human-readable duration
+HUMAN_DURATION=$(printf '%dh:%02dm:%02ds\n' $((DURATION/3600)) $((DURATION%3600/60)) $((DURATION%60)))
+
+log "Rasptor ended at $END_HR (session duration: $HUMAN_DURATION)"
+echo "[✓] Logged Rasptor session to $LOG_FILE"
