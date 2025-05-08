@@ -48,6 +48,5 @@ Toggle routing (automatically switches based on Tor state):
 ## 🧪 Build from Source
 ``` sh
 git clone https://github.com/l4sersec/rasptor.git
-cd rasptor
 dpkg-deb --build rasptor
 ```
