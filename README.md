@@ -31,10 +31,10 @@ sudo apt install tor iptables -y
 
 ## 🚀 Usage
 Enable Tor routing:
-```sudo enable-tor-routing.sh```
+```sudo enable_rasptor_.sh```
 
 Disable Tor routing:
-```sudo disable-tor-routing.sh```
+```sudo disable_rasptor_sh```
 
 Toggle routing (automatically switches based on Tor state):
 ```sudo toggle-tor-routing.sh```
