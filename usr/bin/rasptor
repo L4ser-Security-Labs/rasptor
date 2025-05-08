@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "============================="
+echo "       Rasptor Control       "
+echo "============================="
+echo "1) Enable Tor routing"
+echo "2) Disable Tor routing"
+echo "3) Toggle Tor routing"
+echo "4) Exit"
+echo "============================="
+read -p "Choose an option [1-4]: " choice
+
+case "$choice" in
+  1) /usr/bin/enable.sh ;;
+  2) /usr/bin/disable.sh ;;
+  3) /usr/bin/toggle.sh ;;
+  4) echo "Exiting." ;;
+  *) echo "Invalid option. Exiting." ;;
+esac
