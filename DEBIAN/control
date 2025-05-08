@@ -1,0 +1,9 @@
+Package: rasptor
+Version: 1.0
+Section: net
+Priority: optional
+Architecture: all
+Depends: tor, iptables
+Maintainer: L4ser Security Labs <l4sersec@gmail.com>
+Description: Rasptor - Route all Raspberry Pi traffic through Tor
+ This package enables and disables full system Tor routing with toggle and rollback options.
