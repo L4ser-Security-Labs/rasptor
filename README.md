@@ -2,6 +2,8 @@
 
 **Rasptor** is a lightweight tool for Raspberry Pi Zero/2W that routes all system traffic through the [Tor network](https://www.torproject.org). It also provides a safe way to disable or toggle this routing without breaking your system.
 
+*NOTE: This isn't a Tor proxy — Rasptor transparently tunnels all outbound traffic through Tor at the OS level.*
+
 **Maintained by [L4ser Security Labs](mailto:l4sersec@gmail.com)**
 
 ---
