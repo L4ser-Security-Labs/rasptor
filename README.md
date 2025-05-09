@@ -28,19 +28,22 @@ Download the latest binary from the Release page and the run:
 Or download and install from Cloudsmith:
 
 ``` sh
-wget https://dl.cloudsmith.io/public/l4ser-security-labs/rasptor/deb/any-distro/pool/any-version/main/r/ra/rasptor_1.0/rasptor1.0_all.deb
+wget https://dl.cloudsmith.io/public/l4ser-security-labs/rasptor/deb/any-distro/pool/any-version/main/r/ra/rasptor_1.0/rasptor_1.0_all.deb
 sudo dpkg -i rasptor_1.0_all.deb
 ```
 
 ## 🚀 Usage
 Enable Tor routing:
-```sudo enable_rasptor_.sh```
+```sudo rasptor```
+then select Enable Tor routing
 
 Disable Tor routing:
-```sudo disable_rasptor_sh```
+```sudo rasptor```
+then select Disable Tor routing
 
 Toggle routing (automatically switches based on Tor state):
-```sudo toggle-tor-routing.sh```
+```sudo rasptor```
+then select Toggle Tor routing
 
 ## ❌ Uninstallation
 ```sudo dpkg -r rasptor```
