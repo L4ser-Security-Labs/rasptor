@@ -1,0 +1,57 @@
+.\" Rasptor manual page
+.TH RASPTOR 1 "May 2025" "Version 1.0" "Rasptor Manual"
+.SH NAME
+rasptor \- route all Raspberry Pi traffic through Tor
+.SH SYNOPSIS
+.B rasptor
+.SH DESCRIPTION
+Rasptor is a privacy utility developed by L4ser Security Labs that allows a Raspberry Pi Zero 2W to route all system traffic through the Tor network.
+
+It offers a simple interactive menu to enable, disable, or toggle this routing securely and reliably.
+
+.SH FEATURES
+- Enable system-wide Tor routing
+- Disable routing and restore normal connectivity
+- Toggle between Tor and normal internet
+- Persistence through iptables-persistent
+- Logging and audit trail
+
+.SH USAGE
+Run the command:
+.PP
+.B rasptor
+.PP
+Choose an option from the menu:
+.RS
+.IP \(bu 2
+1) Enable Tor routing
+.IP \(bu 2
+2) Disable Tor routing
+.IP \(bu 2
+3) Toggle Tor routing
+.IP \(bu 2
+4) Exit
+.RE
+
+.SH FILES
+.TP
+/usr/bin/rasptor
+.TP
+/usr/bin/rasptor_enable.sh
+.TP
+/usr/bin/rasptor_disable.sh
+.TP
+/usr/bin/rasptor_toggle.sh
+.TP
+/var/log/rasptor.log
+
+.SH AUTHOR
+Maintained by L4ser Security Labs <l4sersec@gmail.com>
+
+.SH VERSION
+1.0
+
+.SH SEE ALSO
+.BR tor (1),
+.BR iptables (8),
+.BR systemctl (1)
