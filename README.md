@@ -47,6 +47,9 @@ Toggle routing (automatically switches based on Tor state):
 ```sudo rasptor```
 then select Toggle Tor routing
 
+## 📄 Info
+```man rasptor```
+
 ## ❌ Uninstallation
 ```sudo dpkg -r rasptor```
 
